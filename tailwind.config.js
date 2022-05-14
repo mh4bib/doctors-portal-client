@@ -1,7 +1,13 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'appointment': "url('/src/assets/images/appointment.png')",
+        'banner': "url('/src/assets/images/bg.png')",
+        'footer-texture': "url('/img/footer-texture.png')",
+      }
+    },
   },
   daisyui: {
     themes: [
@@ -14,6 +20,7 @@ module.exports = {
           "base-100": "#ffffff",
         },
       },
+
       "dark",
       "cupcake",
     ],
