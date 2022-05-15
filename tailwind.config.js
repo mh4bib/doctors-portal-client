@@ -5,7 +5,7 @@ module.exports = {
       backgroundImage: {
         'appointment': "url('/src/assets/images/appointment.png')",
         'banner': "url('/src/assets/images/bg.png')",
-        'footer-texture': "url('/img/footer-texture.png')",
+        'footer': "url('/src/assets/images/footer.png')",
       }
     },
   },
