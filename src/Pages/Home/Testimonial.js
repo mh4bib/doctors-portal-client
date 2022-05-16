@@ -15,7 +15,7 @@ const Testimonial = () => {
                 </div>
                 <img className='w-[98px] md:w-[192px]' src={quote} alt="" />
             </div>
-            <div className='card bg-base-100 grid grid-cols-1 md:grid-cols-3 gap-[34px] pt-[60px] md:px-8'>
+            <div className='card bg-base-100 grid grid-cols-1 md:grid-cols-3 gap-[34px] py-[60px] md:px-8'>
                 <TestimonialCard Img={people1} Name={'Winson herry'} City={'California'}></TestimonialCard>
                 <TestimonialCard Img={people2} Name={'Winson herry'} City={'California'}></TestimonialCard>
                 <TestimonialCard Img={people3} Name={'Winson herry'} City={'California'}></TestimonialCard>

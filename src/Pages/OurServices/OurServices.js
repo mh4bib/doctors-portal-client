@@ -11,7 +11,7 @@ const OurServices = () => {
         <div className='my-[70px]'>
             <h2 className='text-secondary font-bold text-[20px]'>OUR SERVICES</h2>
             <h1 className='text-[36px]'>Services We Provide</h1>
-            <div className='card bg-base-100 grid grid-cols-1 md:grid-cols-3 gap-[34px] p-4 pt-[60px]'>
+            <div className='card bg-base-100 grid grid-cols-1 md:grid-cols-3 gap-[34px] p-4 py-[60px]'>
                 <ServiceCard imgSrc={fluoride} title="Fluoride Treatment"></ServiceCard>
                 <ServiceCard imgSrc={cavity} title="Cavity Filling"></ServiceCard>
                 <ServiceCard imgSrc={whitening} title="Teeth Whitening"></ServiceCard>

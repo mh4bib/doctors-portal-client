@@ -1,6 +1,7 @@
 import React from 'react';
 import appointment from '../../assets/images/appointment.png';
 import doctor from '../../assets/images/doctor.png';
+import PrimaryButton from '../Shared/Header/PrimaryButton';
 
 const Appointment = () => {
     return (
@@ -10,7 +11,7 @@ const Appointment = () => {
                     <h2 className='text-secondary font-bold text-[20px]'>APPOINTMENT</h2>
                         <h1 className="text-[48px] font-[1200]">Make an appointment Today</h1>
                         <p className="py-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsumis that it has a more-or-less normal distribution of letters,as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page</p>
-                        <button className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">Get Started</button>
+                        <PrimaryButton>Get Started</PrimaryButton>
                     </div>
                     <img className='hidden md:block w-[606px] mt-[-120px]' src={doctor} alt="" />
                 </div>
