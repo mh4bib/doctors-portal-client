@@ -8,7 +8,7 @@ const Header = () => {
     const [user, loading, error] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
-      }
+    }
 
     const menuItems = <>
         <li><Link to={"/"}>Home</Link></li>
@@ -16,10 +16,11 @@ const Header = () => {
         <li><Link to={"/appointments"}>Appointment</Link></li>
         <li><Link to={"/reviews"}>Reviews</Link></li>
         <li><Link to={"/contact"}>Contact Us</Link></li>
-        {!user?
-        <li><Link to={"/login"}>Login</Link></li> :
-        <li><button onClick={logout}>Logout</button></li>
-    }
+        {user && <li><Link to={"/dashboard"}>Dashboard</Link></li>}
+        {!user ?
+            <li><Link to={"/login"}>Login</Link></li> :
+            <li><button onClick={logout}>Logout</button></li>
+        }
     </>
 
     return (
@@ -38,6 +39,13 @@ const Header = () => {
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
+                </ul>
+            </div>
+            <div className="navbar-end flex lg:hidden">
+                <ul className="menu menu-horizontal p-0">
+                    <label tabIndex="0" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
                 </ul>
             </div>
         </div>
