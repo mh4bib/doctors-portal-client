@@ -4,7 +4,7 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import { Link, useNavigate } from 'react-router-dom';
-import { async } from '@firebase/util';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     let loginError;
@@ -17,6 +17,8 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const [token] = useToken(GoogleUser || user);
     const navigate = useNavigate();
 
 
@@ -28,16 +30,16 @@ const Register = () => {
         loginError = <p className='text-red-600'><small>{GoogleError?.message || error?.message || updateError?.message}</small></p>
     }
 
-    if (GoogleUser || user) {
-        console.log(GoogleUser);
-    }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({displayName:data.name});
-        navigate('/appointments');
         console.log('updated name');
     };
+    
+    if (token) {
+        navigate('/appointments');
+    }
     return (
         <div className="card md:w-96 bg-base-100 mx-4 md:mx-auto shadow-xl">
             <div className="card-body">

@@ -4,6 +4,7 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     let loginError;
@@ -20,11 +21,13 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const[token] = useToken(user || GoogleUser);
+
     useEffect(()=>{
-        if (GoogleUser || user) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    },[GoogleUser, user, navigate, from]);
+    },[token, GoogleUser, user, navigate, from]);
 
     if (GoogleLoading || loading) {
        return <LoadingSpinner></LoadingSpinner>
